@@ -1,0 +1,530 @@
+.App {
+  background-color: #FFFDD0;
+  font-family: 'Playfair Display';
+    --nav-height: 50px;
+    padding-top: var(--nav-height);
+}
+
+i{
+  color:#62a4ab;
+}
+
+/*Navbar*/
+Header{
+  background-color:#FFFDD0;
+}
+
+
+
+#navbar{
+    display: flex;
+    height: var(--nav-height);
+    background-color: transparent;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+ backdrop-filter: blur(10px);
+}
+
+
+
+.active{
+transition-timing-function: ease-in;
+transform: 0.2s;
+}
+
+.hidden {
+  box-shadow: none;
+  transform: translateY(calc(-1 * var(--nav-height)));
+  transition-timing-function:ease-in;
+    transform: 0.2s;
+}
+
+.navbar-collapse{
+  margin-left: 85%;
+}
+
+.container .Navbar-brand{
+  color: #62a4ab;
+}
+
+/*Intro*/
+
+.Intro{
+  margin-bottom:14%;
+  margin-left: 10%;
+}
+
+.Intro .Introduction{
+  color: #62a4ab;
+  font-weight: 700;
+  margin-top: 8%;
+}
+
+
+.Intro .intro-title{
+  font-size:450%;
+  color: rgb(102, 102, 102);
+}
+
+.Intro .intro-summary{
+  font-size:120%;
+}
+
+
+.title{
+    color: #62a4ab;
+    font-weight: 700;
+}
+
+/*About Me*/
+.About{
+  margin-bottom: 12%;
+  display: block;
+    margin-left: 27%;
+    margin-right: auto;
+    width: 60%;
+  }
+  .About .line-1{
+      height: 1px;
+      width:30%;
+      background: #62a4ab;
+      position: relative;
+      top:-25px;
+      left:18%;
+  }
+
+.About .about-content{
+    font-size: 120%;
+    margin-top: 3%;
+}
+
+.About #profile-picture{
+  width:50%;
+  margin-top: 15%;
+  margin-left: 5%;
+}
+
+.list{
+  list-style: none;
+ 
+}
+
+.list::before {
+ content: "\00BB";
+  margin-right: 3%;
+ color:#62a4ab;
+ font-size: 200%;
+}
+
+/*Experiences*/
+.Experience{
+  margin-bottom: 12%;
+  display: block;
+    margin-left: 30%;
+    margin-right: auto;
+    width: 45%;
+    font-size: 120%;
+  }
+.Experience .line-1{
+  height: 1px;
+    width: 30%;
+    background: #62a4ab;
+    position: relative;
+    top: -65px;
+    left: 37%;
+}
+.nav {
+margin-top: 40%;
+
+}
+
+.tab-container .date{
+  margin-bottom: 5%;
+}
+
+.Experience .tab-container{
+  border-left:3px solid #62a4ab;
+  padding: 5%;
+}
+
+.work{
+  color: #62a4ab;
+}
+
+
+/*Projects*/
+.Projects{
+  margin-bottom: 12%;
+}
+
+.Projects .line-1 {
+  height: 1px;
+    width: 30%;
+    background: #62a4ab;
+    position: relative;
+    top: -65px;
+    left: 35%;
+}
+
+.Projects .project{
+  margin-bottom: 15%;
+}
+
+.project-name{
+  color: #62a4ab;
+}
+
+.project .project-1{
+margin-left: 22%;
+}
+/*Contact*/
+.Contact{
+  font-size: 120%;
+  margin-top: 25%;
+}
+
+.Contact .contact{
+  margin-top: 15%;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width:40%;
+}
+
+/*footer*/
+footer{
+  margin-top: 15%;
+  text-align: center;
+box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
+}
+
+footer p{
+  padding-top: 1%;
+  color:#62a4ab;
+}
+
+@media (min-width:320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+
+.navbar-toggler{
+  margin-right: 7%;
+}
+
+  .navbar-collapse {
+    margin-left: 77%;
+    margin-top: 1%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
+    padding: 1%;
+  }
+
+
+.About .line-1 {
+  position: relative;
+  left:65%;
+  width:45%;
+}
+
+.About #profile-picture {
+  width: 100%;
+}
+
+.Experience .line-1 {
+  position: relative;
+    left: 80%;
+    top:-80px;
+    width: 65%;
+  }
+
+.Projects .line-1 {
+  position: relative;
+    left: 70%;
+    width: 0%;
+  }
+
+  .project-1{
+    position: relative;
+    left:-22%;
+  }
+}
+
+@media (min-width:480px) {
+  /* smartphones, Android phones, landscape iPhone */
+.navbar-toggler {
+    margin-right: 15%;
+  }
+
+.navbar-collapse {
+    margin-left: 80%;
+    margin-top: 1%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
+    padding: 1%;
+  }
+
+  .About .line-1 {
+      position: relative;
+      left: 45%;
+      width: 65%;
+    }
+  
+    .Experience .line-1 {
+      position: relative;
+      left: 95%;
+      width: 65%;
+    }
+  
+    .Projects .line-1 {
+      position: relative;
+      left: 70%;
+      width: 35%;
+    }
+
+    #pokedex-img{
+      width:100%;
+    }
+
+    #RickAndMorty-img{
+width: 100%;
+    }
+}
+
+@media (min-width:600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+.navbar-toggler {
+    margin-right: -5%;
+  }
+
+  .navbar-collapse {
+    margin-left: 93%;
+    margin-top: 1%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
+    padding: 2%;
+  }
+
+.About .line-1 {
+    position: relative;
+    left: 45%;
+    width: 65%;
+  }
+
+  .Experience .line-1 {
+    position: relative;
+    left: 85%;
+    width: 65%;
+  }
+
+  .Projects .line-1 {
+    position: relative;
+    left: 70%;
+    width: 35%;
+  }
+
+  #about #profile-picture{
+ margin-left:-8%;
+  }
+}
+
+@media (min-width:801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+.navbar-collapse {
+    margin-left: 55%;
+    box-shadow:none;
+  }
+
+.About .line-1 {
+    position: relative;
+    left: 35%;
+    width: 55%;
+  }
+
+    .About #profile-picture {
+      margin-top: 250%;
+      width: 100%;
+    }
+
+  .Experience .line-1 {
+    position: relative;
+    left: 75%;
+    width: 55%;
+  }
+
+  .Projects .line-1 {
+    position: relative;
+    left: 45%;
+    width: 35%;
+  }
+
+  #fixed-line1{
+    height: 1px;
+      width: 15%;
+      background: #62a4ab;
+      position: fixed;
+      top: 790px;
+      left: -1%;
+      transform:rotate(90deg);
+  }
+
+    #fixed-line1 .fixed-list{
+      list-style: none;
+      position: fixed;
+      transform: rotate(270deg);
+      left:-80%;
+      top:-63px;
+      font-size: x-large;
+      color:#62a4ab;
+    }
+
+    #fixed-line2 {
+      height: 1px;
+      width: 15%;
+      background: #62a4ab;
+      position: fixed;
+      top: 770px;
+      left: 85%;
+      transform: rotate(90deg);
+    }
+
+    #fixed-line2 .fixed-email{
+      color:#62a4ab;
+      position: fixed;
+       left:-135%;
+       top:-15px;
+       font-size:large;
+    }
+
+         .project-1 {
+           position: relative;
+           left: 4%;
+         }
+
+        #pokedex-img {
+          width: 180%;
+          height: 350px;
+        }
+    
+        #RickAndMorty-img {
+          width:100%;
+          height:400px;
+        }
+                #about #profile-picture {
+                  margin-left: -1%;
+                }
+
+}
+
+@media (min-width:1025px) {
+  /* big landscape tablets, laptops, and desktops */
+
+.navbar-collapse {
+    margin-left: 65%;
+    
+  }
+
+.About .line-1 {
+    position: relative;
+    left: 50%;
+    width: 65%;
+  }
+
+    .About #profile-picture {
+ margin-top: 85%;
+      width: 70%;
+    }
+
+  .Experience .line-1 {
+    position: relative;
+    left: 95%;
+    width: 65%;
+  }
+
+  .Projects .line-1 {
+    position: relative;
+    left: 70%;
+    width: 35%;
+  }
+
+    #fixed-line1 {
+      height: 1px;
+      width: 15%;
+      background: #62a4ab;
+      position: fixed;
+      top: 750px;
+      left: -1%;
+      transform: rotate(90deg);
+    }
+
+#fixed-line1 .fixed-list {
+  left: -65%;
+}
+
+#fixed-line2 {
+  height: 1px;
+  width: 15%;
+  background: #62a4ab;
+  position: fixed;
+  top: 770px;
+  left: 85%;
+  transform: rotate(90deg);
+}
+
+    #fixed-line2 .fixed-email {
+      left: -115%;
+    }
+}
+
+@media (min-width:1281px) {
+  /* hi-res laptops and desktops */
+
+  #navbar .navbar-collapse {
+      margin-left: 76%;
+    }
+
+.About .line-1 {
+    position: relative;
+    left: 20%;
+    width: 35%;
+  }
+
+    .About #profile-picture {
+      margin-top: 35%;
+      width: 50%;
+    }
+
+  .Experience .line-1 {
+    position: relative;
+    top:-70px;
+    left: 45%;
+    width: 45%;
+  }
+
+  .nav .nav-link{
+    position:relative;
+    top:5px;
+  }
+
+  .Projects .line-1 {
+    position: relative;
+    left: 37%;
+    width: 35%;
+  }
+  
+ #fixed-line1{
+left: -4%;
+top: 915px;
+ }
+
+    #fixed-line1 .fixed-list {
+      left: -50%;
+      top: -70px;
+      font-size: 170%;
+    }
+
+  #fixed-line2{
+      top: 905px;
+    left: 88%;
+  }
+
+    #fixed-line2 .fixed-email {
+      left: -75%;
+      top: -15px;
+      font-size: larger;
+    }
+}
