@@ -9,6 +9,22 @@ i{
   color:#62a4ab;
 }
 
+/*Modal*/
+
+.show{
+margin-left: -9%;
+  margin-right: auto;
+  margin-top: 5%;
+  width: 100%;
+}
+.modal-dia{
+  width:500%;
+}
+
+.modal-content{
+  width:160%;
+}
+
 /*Navbar*/
 Header{
   background-color:#FFFDD0;
@@ -267,14 +283,14 @@ footer p{
   
     .Experience .line-1 {
       position: relative;
-      left: 95%;
+      left: 75%;
       width: 65%;
     }
   
     .Projects .line-1 {
       position: relative;
-      left: 70%;
-      width: 35%;
+      left: 75%;
+      width: 25%;
     }
 
     #pokedex-img{
@@ -307,8 +323,9 @@ width: 100%;
 
   .Experience .line-1 {
     position: relative;
-    left: 85%;
-    width: 65%;
+    top:-65px;
+    left: 95%;
+    width: 55%;
   }
 
   .Projects .line-1 {
@@ -336,7 +353,7 @@ width: 100%;
   }
 
     .About #profile-picture {
-      margin-top: 250%;
+      margin-top: 150%;
       width: 100%;
     }
 
@@ -348,7 +365,7 @@ width: 100%;
 
   .Projects .line-1 {
     position: relative;
-    left: 45%;
+    left: 55%;
     width: 35%;
   }
 
@@ -357,7 +374,7 @@ width: 100%;
       width: 15%;
       background: #62a4ab;
       position: fixed;
-      top: 790px;
+      top: 750px;
       left: -1%;
       transform:rotate(90deg);
   }
@@ -377,7 +394,7 @@ width: 100%;
       width: 15%;
       background: #62a4ab;
       position: fixed;
-      top: 770px;
+      top: 750px;
       left: 85%;
       transform: rotate(90deg);
     }
@@ -385,7 +402,7 @@ width: 100%;
     #fixed-line2 .fixed-email{
       color:#62a4ab;
       position: fixed;
-       left:-135%;
+       left:-170%;
        top:-15px;
        font-size:large;
     }
@@ -452,7 +469,7 @@ width: 100%;
     }
 
 #fixed-line1 .fixed-list {
-  left: -65%;
+  left: -85%;
 }
 
 #fixed-line2 {
@@ -460,13 +477,14 @@ width: 100%;
   width: 15%;
   background: #62a4ab;
   position: fixed;
-  top: 770px;
+  top: 750px;
   left: 85%;
   transform: rotate(90deg);
 }
 
     #fixed-line2 .fixed-email {
       left: -115%;
+      left:-150%;
     }
 }
 
@@ -479,12 +497,12 @@ width: 100%;
 
 .About .line-1 {
     position: relative;
-    left: 20%;
+    left: 25%;
     width: 35%;
   }
 
     .About #profile-picture {
-      margin-top: 35%;
+      margin-top: 10%;
       width: 50%;
     }
 
@@ -508,23 +526,23 @@ width: 100%;
   
  #fixed-line1{
 left: -4%;
-top: 915px;
+top: 815px;
  }
 
     #fixed-line1 .fixed-list {
-      left: -50%;
+      left: -60%;
       top: -70px;
       font-size: 170%;
     }
 
   #fixed-line2{
-      top: 905px;
+      top: 815px;
     left: 88%;
   }
 
     #fixed-line2 .fixed-email {
-      left: -75%;
-      top: -15px;
+      left: -100%;
+      top: -20px;
       font-size: larger;
     }
 }

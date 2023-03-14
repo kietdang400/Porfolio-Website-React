@@ -6,9 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import project1 from './IMG/Project1.JPG';
 import project2 from './IMG/Project2.JPG';
+import resume from './IMG/Resume.JPG';
 import introBackground from './IMG/introBackground.gif';
 import profilePic from './IMG/Profile Pic.JPG';
-import { Col, Row,Button} from 'react-bootstrap';
+import { Col, Row, Button, Modal, ModalBody} from 'react-bootstrap';
 
 
 
@@ -102,11 +103,35 @@ useEffect(()=>{
   }
 },[tabbs])
 
-
+//modal
+const[Modall,setModal]=useState(false)
+console.log(window.innerWidth)
 
   return (
     <div className="App">
 <header>
+{Modall&&
+  <div
+      className="modal show"
+      style={{ display: 'block', position: 'absolute' }}
+    >
+      <Modal.Dialog className="modal-dia">
+        <Modal.Header closeButton onClick={()=>{setModal(false)}}>
+          <Modal.Title>Resume</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+         
+              <img src={resume} alt="resume"></img>
+
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" className="btn btn-danger" onClick={()=>{setModal(false)}}>Close</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    </div>
+}
  <Navbar id="navbar" className={` ${show? 'hidden':'active'} fixed-top `} expand="lg">
       <Container>
         <Navbar.Brand className="Navbar-brand" href="#home">Kiet Dang</Navbar.Brand>
@@ -138,7 +163,7 @@ useEffect(()=>{
         </Col>
       </Row>
       <div>
-        <Button className="bg-info">Resume</Button>
+        <Button className="bg-info" onClick={()=>{setModal(true)}}>Resume</Button>
       </div>
     </Container>
   </section>
@@ -180,21 +205,6 @@ useEffect(()=>{
       <div><h1 className="title mb-5">Where I worked</h1></div>
     <div className="line-1"></div>
       <Row className="tab-container">
-{window.innerWidth<600&&  
-<Col >
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-  </li>
-</ul>
-</Col>}
-    { window.innerWidth>=600&&  
     <Col md={6}>
   <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
   <Button className="nav-link bg-info mb-3" id="v-pills-home-tab" data-toggle="pill" onClick={()=>{setTab("JIP")}} role="tab">J.I.P Associates</Button>
@@ -202,7 +212,7 @@ useEffect(()=>{
   <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("Stripe")}} role="tab">Stripe</Button>
 </div>
 </Col> 
-}
+
 <Col md={6}>
 <div className="tab-content" id="v-pills-tabContent">
   <div>{infoHeader}</div>
@@ -272,7 +282,7 @@ useEffect(()=>{
 <footer>
   <Container className="footer-container">
     <div ><p>Designed and Built by Kiet Dang</p></div>
-    <div><i class="bi bi-star"></i><i class="bi bi-git"></i></div>
+    <div><a href="https://github.com/kietdang400/Porfolio-Website-React/tree/main"><i class="bi bi-star"></i><i class="bi bi-git"></i></a></div>
   </Container>
 </footer>
     </div>
