@@ -17,13 +17,6 @@ margin-left: -9%;
   margin-top: 5%;
   width: 100%;
 }
-.modal-dia{
-  width:500%;
-}
-
-.modal-content{
-  width:160%;
-}
 
 /*Navbar*/
 Header{
@@ -121,14 +114,14 @@ transform: 0.2s;
 
 .list{
   list-style: none;
- 
+font-size: 70%;
 }
 
 .list::before {
  content: "\00BB";
   margin-right: 3%;
  color:#62a4ab;
- font-size: 200%;
+ font-size: 100%;
 }
 
 /*Experiences*/
@@ -148,6 +141,12 @@ transform: 0.2s;
     top: -65px;
     left: 37%;
 }
+
+.nav-link{
+  width: 75%;
+  height: 40px;
+}
+
 .nav {
 margin-top: 40%;
 
@@ -220,7 +219,40 @@ footer p{
 
 @media (min-width:320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+/*modal start*/
+.modal{
+  top:250px;
+}
 
+  .modal-dia {
+      width: fit-content;
+      position: relative;
+        left: 15%;
+        margin-left: 5%;
+    }
+  
+    .modal-content {
+     height: fit-content;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+.modal-header{
+
+width:170%;
+}
+    .resume{
+      width:200%;
+    }
+
+    .hide-modal{
+      position:relative;
+      left: 50%;
+      width:300%;
+    }
+
+
+/*navbar start*/
 .navbar-toggler{
   margin-right: 7%;
 }
@@ -233,6 +265,7 @@ footer p{
   }
 
 
+/*about start*/
 .About .line-1 {
   position: relative;
   left:65%;
@@ -243,6 +276,8 @@ footer p{
   width: 100%;
 }
 
+
+/*experience start*/
 .Experience .line-1 {
   position: relative;
     left: 80%;
@@ -250,6 +285,12 @@ footer p{
     width: 65%;
   }
 
+    .nav-link {
+      width: 110%;
+      height: 40px;
+    }
+
+/*projects start*/
 .Projects .line-1 {
   position: relative;
     left: 70%;
@@ -264,6 +305,14 @@ footer p{
 
 @media (min-width:480px) {
   /* smartphones, Android phones, landscape iPhone */
+/*modal start*/
+.hide-modal {
+    position: relative;
+    left: 45%;
+    width: 300%;
+  }
+
+/*navbar start*/
 .navbar-toggler {
     margin-right: 15%;
   }
@@ -275,18 +324,20 @@ footer p{
     padding: 1%;
   }
 
+/*about-start*/
   .About .line-1 {
       position: relative;
       left: 45%;
       width: 65%;
     }
-  
+
+/*experience-start*/
     .Experience .line-1 {
       position: relative;
       left: 75%;
       width: 65%;
     }
-  
+/*project-start*/ 
     .Projects .line-1 {
       position: relative;
       left: 75%;
@@ -304,6 +355,13 @@ width: 100%;
 
 @media (min-width:600px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+/*modal-start*/
+.modal-header {
+
+    width: 180%;
+  }
+
+/*navbar-start*/
 .navbar-toggler {
     margin-right: -5%;
   }
@@ -315,19 +373,30 @@ width: 100%;
     padding: 2%;
   }
 
+
+/*about start*/
 .About .line-1 {
     position: relative;
     left: 45%;
     width: 65%;
   }
 
+
+/*experience start*/
   .Experience .line-1 {
     position: relative;
     top:-65px;
     left: 95%;
     width: 55%;
+    margin-bottom: -10%;
   }
 
+    .nav-link {
+      width: 110%;
+      height: 40px;
+    }
+
+/*project-start*/
   .Projects .line-1 {
     position: relative;
     left: 70%;
@@ -341,11 +410,44 @@ width: 100%;
 
 @media (min-width:801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+/*modal start*/
+
+  .modal-dia {
+    width: fit-content;
+    position: relative;
+    left: 15%;
+    margin-left: 5%;
+  }
+
+  .modal-content {
+    height: fit-content;
+    width: 120%;
+    overflow-x: auto;
+  }
+
+  .modal-header {
+    width: 100%;
+  }
+
+  .resume {
+    width: 100%;
+  }
+
+  .hide-modal {
+    position: relative;
+    left: -11%;
+    width: 75%;
+  }
+
+
+/*navbar start*/
 .navbar-collapse {
     margin-left: 55%;
     box-shadow:none;
   }
 
+/*about start*/
 .About .line-1 {
     position: relative;
     left: 35%;
@@ -357,12 +459,23 @@ width: 100%;
       width: 100%;
     }
 
+   /*experience start*/ 
   .Experience .line-1 {
     position: relative;
     left: 75%;
     width: 55%;
   }
 
+     .nav-link {
+       width: 110%;
+       height: 40px;
+     }
+
+     .nav{
+      margin-top: 160%;
+     }
+
+  /*project-start*/
   .Projects .line-1 {
     position: relative;
     left: 55%;
@@ -430,11 +543,41 @@ width: 100%;
 @media (min-width:1025px) {
   /* big landscape tablets, laptops, and desktops */
 
+/*modal-start*/
+.modal-dia {
+    width: fit-content;
+    position: relative;
+    left: 15%;
+    margin-left: 6%;
+  }
+
+  .modal-content {
+    height: fit-content;
+    width: 150%;
+    overflow-x: auto;
+  }
+
+  .modal-header {
+    width: 100%;
+  }
+
+  .resume {
+    width: 100%;
+  }
+
+  .hide-modal {
+    position: relative;
+    left: -11%;
+    width: 75%;
+  }
+
+/*navbar start*/
 .navbar-collapse {
     margin-left: 65%;
     
   }
 
+/*about start*/  
 .About .line-1 {
     position: relative;
     left: 50%;
@@ -445,13 +588,17 @@ width: 100%;
  margin-top: 85%;
       width: 70%;
     }
-
+/*experience start*/
   .Experience .line-1 {
     position: relative;
     left: 95%;
     width: 65%;
   }
 
+  .nav{
+    margin-top: 90%
+  }
+/*project start*/
   .Projects .line-1 {
     position: relative;
     left: 70%;
@@ -491,6 +638,41 @@ width: 100%;
 @media (min-width:1281px) {
   /* hi-res laptops and desktops */
 
+/*modal start*/
+
+.modal{
+  top:50px;
+}
+
+  .modal-dia {
+      width: fit-content;
+      position: relative;
+      left: 15%;
+      margin-left: 20%;
+    }
+  
+    .modal-content {
+      height: fit-content;
+      width: 150%;
+      overflow-x: auto;
+    }
+  
+    .modal-header {
+      width: 100%;
+    }
+  
+    .resume {
+      width: 100%;
+    }
+  
+    .hide-modal {
+      position: relative;
+      left: -11%;
+      width: 75%;
+    }
+
+
+/*navbar start*/
   #navbar .navbar-collapse {
       margin-left: 76%;
     }
@@ -511,6 +693,10 @@ width: 100%;
     top:-70px;
     left: 45%;
     width: 45%;
+  }
+
+  .nav{
+    margin-top: 50%;
   }
 
   .nav .nav-link{
@@ -545,4 +731,5 @@ top: 815px;
       top: -20px;
       font-size: larger;
     }
+
 }

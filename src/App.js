@@ -7,9 +7,9 @@ import './App.css';
 import project1 from './IMG/Project1.JPG';
 import project2 from './IMG/Project2.JPG';
 import resume from './IMG/Resume.JPG';
-import introBackground from './IMG/introBackground.gif';
 import profilePic from './IMG/Profile Pic.JPG';
 import { Col, Row, Button, Modal, ModalBody} from 'react-bootstrap';
+
 
 
 
@@ -116,18 +116,18 @@ console.log(window.innerWidth)
       style={{ display: 'block', position: 'absolute' }}
     >
       <Modal.Dialog className="modal-dia">
-        <Modal.Header closeButton onClick={()=>{setModal(false)}}>
+        <Modal.Header className="modal-header" closeButton onClick={()=>{setModal(false)}}>
           <Modal.Title>Resume</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
          
-              <img src={resume} alt="resume"></img>
+              <img className="resume" src={resume} alt="resume"></img>
 
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" className="btn btn-danger" onClick={()=>{setModal(false)}}>Close</Button>
+          <Button variant="secondary" className=" hide-modal btn btn-danger" onClick={()=>{setModal(false)}}>Close</Button>
         </Modal.Footer>
       </Modal.Dialog>
     </div>
@@ -148,6 +148,7 @@ console.log(window.innerWidth)
     </Navbar>
 </header>
 <main>
+ 
   <section id="intro" className="Intro">
     <Container className="mt-5">
       <div className="d-flex justify-content-left mb-3"><h5 className="Introduction">Hello, my name is</h5></div>
@@ -167,6 +168,7 @@ console.log(window.innerWidth)
       </div>
     </Container>
   </section>
+  
   <section id="about" className="About">
     <Container>
       <h1 className="title">About Me</h1>
@@ -207,7 +209,7 @@ console.log(window.innerWidth)
       <Row className="tab-container">
     <Col md={6}>
   <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-  <Button className="nav-link bg-info mb-3" id="v-pills-home-tab" data-toggle="pill" onClick={()=>{setTab("JIP")}} role="tab">J.I.P Associates</Button>
+  <Button className="nav-link bg-info mb-3" id="v-pills-home-tab" data-toggle="pill" onClick={()=>{setTab("JIP")}} role="tab">J.I.P</Button>
   <Button className="nav-link bg-info mb-3" id="v-pills-profile-tab" data-toggle="pill" onClick={()=>{setTab("HiMyLink")}} role="tab">HiMyLink</Button>
   <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("Stripe")}} role="tab">Stripe</Button>
 </div>
@@ -278,6 +280,7 @@ console.log(window.innerWidth)
       </li><li className='mb-3'><i class="bi bi-instagram"></i></li>
       </ul></div>}
   {window.innerWidth>=801&&<div id="fixed-line2"><a className="fixed-email" href = "mailto: kdgdang@ucdavis.edu">kdgdang@ucdavis.edu</a></div>}
+  
 </main>
 <footer>
   <Container className="footer-container">
