@@ -9,6 +9,9 @@ import project2 from './IMG/Project2.JPG';
 import resume from './IMG/Resume.JPG';
 import profilePic from './IMG/Profile Pic.JPG';
 import { Col, Row, Button, Modal, ModalBody} from 'react-bootstrap';
+import Fade from 'reveal.js';
+
+
 
 
 
@@ -176,7 +179,7 @@ console.log(window.innerWidth)
       <Row>
         <Col className="about-content" md={5}>
          <div><p>Hi, my name is Kiet and I like building things on the internet. My interest in web development started in my second year of college when I saw my friend coding a website for his school project.</p></div>
-      <div><p> After that moment, I started learning the basics like HTML&CSS then progressively learned the fundamentals of Java Script where I got my Algorithms and Data Structure Certificate on freeCodeCamp. Currently, I am building projects that will challenge and help me hone my skills.</p></div>
+      <div><p> After that moment, I started learning the basics like HTML&CSS then progressively learned the fundamentals of Java Script where I got my <a href='https://www.freecodecamp.org/certification/KietDang/javascript-algorithms-and-data-structures' alt="certificate" style={{color:'#62a4ab'}}>Algorithms and Data Structure Certificate on freeCodeCamp</a>. Currently, I am building projects that will challenge and help me hone my skills.</p></div>
       <div><p> Here are a few technologies that I have been working with:</p></div>
         </Col>
         <Col md={7}>
