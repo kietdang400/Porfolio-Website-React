@@ -49,6 +49,7 @@ transform: 0.2s;
 
 .navbar-collapse{
   margin-left: 85%;
+  background-color: transparent;
 }
 
 .container .Navbar-brand{
@@ -266,6 +267,10 @@ width:170%;
 
 
 /*about start*/
+.About{
+  margin-left: 17%;
+}
+
 .About .line-1 {
   position: relative;
   left:65%;
@@ -278,6 +283,10 @@ width:170%;
 
 
 /*experience start*/
+.Experience{
+  margin-left: 20%;
+}
+
 .Experience .line-1 {
   position: relative;
     left: 80%;
@@ -286,8 +295,16 @@ width:170%;
   }
 
     .nav-link {
-      width: 110%;
+      width: 115%;
       height: 40px;
+    }
+
+  .tab-content{
+  margin-top:40%;
+  margin-left: 3%;
+      overflow-y: scroll;
+      height: 80%;
+      width:150%;
     }
 
 /*projects start*/
@@ -314,7 +331,7 @@ width:170%;
 
 /*navbar start*/
 .navbar-toggler {
-    margin-right: 15%;
+    margin-right: 5%;
   }
 
 .navbar-collapse {
@@ -325,22 +342,33 @@ width:170%;
   }
 
 /*about-start*/
+
   .About .line-1 {
       position: relative;
-      left: 45%;
-      width: 65%;
+      left: 50%;
+      width: 45%;
     }
 
 /*experience-start*/
+.tab-container{
+ margin-top: -10%;
+}
+
+.tab-content {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100%;
+  margin-top: 10%;
+}
     .Experience .line-1 {
       position: relative;
-      left: 75%;
-      width: 65%;
+      left: 60%;
+      width: 70%;
     }
 /*project-start*/ 
     .Projects .line-1 {
       position: relative;
-      left: 75%;
+      left: 72%;
       width: 25%;
     }
 
@@ -375,6 +403,7 @@ width: 100%;
 
 
 /*about start*/
+
 .About .line-1 {
     position: relative;
     left: 45%;
@@ -383,11 +412,16 @@ width: 100%;
 
 
 /*experience start*/
+
+.tab-container {
+  margin-top: -10%;
+}
+
   .Experience .line-1 {
     position: relative;
     top:-65px;
     left: 95%;
-    width: 55%;
+    width: 65%;
     margin-bottom: -10%;
   }
 
@@ -399,8 +433,8 @@ width: 100%;
 /*project-start*/
   .Projects .line-1 {
     position: relative;
-    left: 70%;
-    width: 35%;
+    left: 67%;
+    width: 30%;
   }
 
   #about #profile-picture{
@@ -443,7 +477,7 @@ width: 100%;
 
 /*navbar start*/
 .navbar-collapse {
-    margin-left: 55%;
+    margin-left: 93%;
     box-shadow:none;
   }
 
@@ -573,15 +607,20 @@ width: 100%;
 
 /*navbar start*/
 .navbar-collapse {
-    margin-left: 65%;
+    margin-left: 55%;
+   
     
   }
 
 /*about start*/  
+.About{
+  margin-left: 25%;
+}
+
 .About .line-1 {
     position: relative;
-    left: 50%;
-    width: 65%;
+    left: 30%;
+    width: 40%;
   }
 
     .About #profile-picture {
@@ -591,8 +630,8 @@ width: 100%;
 /*experience start*/
   .Experience .line-1 {
     position: relative;
-    left: 95%;
-    width: 65%;
+    left: 65%;
+    width: 50%;
   }
 
   .nav{
@@ -601,8 +640,8 @@ width: 100%;
 /*project start*/
   .Projects .line-1 {
     position: relative;
-    left: 70%;
-    width: 35%;
+    left: 45%;
+    width: 30%;
   }
 
     #fixed-line1 {
@@ -616,7 +655,7 @@ width: 100%;
     }
 
 #fixed-line1 .fixed-list {
-  left: -85%;
+  left: -95%;
 }
 
 #fixed-line2 {
@@ -674,8 +713,12 @@ width: 100%;
 
 /*navbar start*/
   #navbar .navbar-collapse {
-      margin-left: 76%;
+      margin-left: 66%;
     }
+
+  .About{
+    margin-left: 25%;
+  }
 
 .About .line-1 {
     position: relative;
@@ -687,11 +730,14 @@ width: 100%;
       margin-top: 10%;
       width: 50%;
     }
+.Experience{
+  margin-left: 22%;
+}
 
   .Experience .line-1 {
     position: relative;
     top:-70px;
-    left: 45%;
+    left: 55%;
     width: 45%;
   }
 
@@ -706,30 +752,32 @@ width: 100%;
 
   .Projects .line-1 {
     position: relative;
-    left: 37%;
-    width: 35%;
+    left: 40%;
+    width: 30%;
   }
   
  #fixed-line1{
 left: -4%;
-top: 815px;
+top: 705px;
  }
 
     #fixed-line1 .fixed-list {
-      left: -60%;
+      left: -80%;
       top: -70px;
       font-size: 170%;
     }
 
   #fixed-line2{
-      top: 815px;
+      top: 705px;
     left: 88%;
   }
 
     #fixed-line2 .fixed-email {
-      left: -100%;
+      left: -120%;
       top: -20px;
       font-size: larger;
     }
+
+        
 
 }

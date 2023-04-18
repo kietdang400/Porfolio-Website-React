@@ -108,7 +108,7 @@ useEffect(()=>{
 
 //modal
 const[Modall,setModal]=useState(false)
-console.log(window.innerWidth)
+console.log(window.innerWidth);
 
   return (
     <div className="App">
@@ -118,6 +118,7 @@ console.log(window.innerWidth)
       className="modal show"
       style={{ display: 'block', position: 'absolute' }}
     >
+
       <Modal.Dialog className="modal-dia">
         <Modal.Header className="modal-header" closeButton onClick={()=>{setModal(false)}}>
           <Modal.Title>Resume</Modal.Title>
