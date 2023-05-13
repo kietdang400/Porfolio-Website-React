@@ -103,6 +103,18 @@ useEffect(()=>{
           </ul>
           </div>)
      break;
+      case'GBCS Group':
+     setInfoHeader(<div><h3>Frontend Developer Intern <h3 className="work">@GBCS Group</h3></h3></div>);
+     setInfoDate(<div>May-Sep 2023</div>);
+      setInfoBullet(
+      <div>
+        <ul>
+          <li className="list mt-2">Website revamp for various internal projects using React.js</li>
+          <li className="list mt-2">Collaborated effectively with teammates, fostering communication, accountability, knowledge sharing, and continuous improvement for successful project outcomes.</li>
+          <li className="list mt-2">To strategize design choices according to user experience.</li>
+          </ul>
+          </div>)
+     break;
   }
 },[tabbs])
 
@@ -151,8 +163,8 @@ console.log(window.innerWidth);
       </Container>
     </Navbar>
 </header>
+
 <main>
- 
   <section id="intro" className="Intro">
     <Container className="mt-5">
       <div className="d-flex justify-content-left mb-3"><h5 className="Introduction">Hello, my name is</h5></div>
@@ -216,6 +228,7 @@ console.log(window.innerWidth);
   <Button className="nav-link bg-info mb-3" id="v-pills-home-tab" data-toggle="pill" onClick={()=>{setTab("JIP")}} role="tab">J.I.P</Button>
   <Button className="nav-link bg-info mb-3" id="v-pills-profile-tab" data-toggle="pill" onClick={()=>{setTab("HiMyLink")}} role="tab">HiMyLink</Button>
   <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("Stripe")}} role="tab">Stripe</Button>
+  <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("GBCS Group")}} role="tab">GBCS Group</Button>
 </div>
 </Col> 
 
@@ -223,7 +236,7 @@ console.log(window.innerWidth);
 <div className="tab-content" id="v-pills-tabContent">
   <div>{infoHeader}</div>
   <div className="date">{infoDate}</div>
-  <div>{infoBullet}</div>
+  <div id="info">{infoBullet}</div>
 </div>
 </Col>
 </Row>
@@ -231,10 +244,15 @@ console.log(window.innerWidth);
     </Container>
   </section>
 
+
+
+
    <section id="projects" className="Projects">
     <Container>
+
       <div className="mb-5"><h1 className="title">Something's I have Built</h1></div>
       <div class="line-1"></div>
+
       <Row className="project">
         {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img"src={project1} alt="Photo of Pokedex Project"></img></Col>}
         <Col md={5} className="project-1">
@@ -265,8 +283,28 @@ console.log(window.innerWidth);
 {window.innerWidth>=480&&<Col md={7}><img id="RickAndMorty-img" src={project2} alt="Photo of Rick and Morty Location Project"></img></Col>}
       </Row>
 
+      <Row className="project">
+        {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img"src={project1} alt="Photo of Pokedex Project"></img></Col>}
+        <Col md={5} className="project-1">
+          <div><h5>featured project</h5></div>
+          <div className="project-name mb-4"><h2>Intrusive Box</h2></div>
+          <div className="card">
+  <div className="card-body">
+    <p className="card-text">Developed a responsive Full-Stack social media app called Intrusive Box enabling user sign-up, posting intrusive thoughts, chatting with friends, and editing profiles.</p>
+  </div>
+</div>
+<div className="mt-3"><p>React.js&ensp;&ensp;&ensp;MongoDB&ensp;&ensp;&ensp;MUI&ensp;&ensp;Express&ensp;&ensp;Node.js</p></div>
+<div><a href="https://github.com/kietdang400/Intrusive-Thoughts"><i class="bi bi-github"></i></a>&ensp;&ensp;<a href="https://github.com/kietdang400/Intrusive-Thoughts"><i class="bi bi-box-arrow-up-right"></i></a></div>
+        </Col>
+      </Row>
+
     </Container>
   </section>
+
+
+
+
+
 
   <section id="contact" className="Contact">
     <Container className="contact">
@@ -284,8 +322,9 @@ console.log(window.innerWidth);
       </li><li className='mb-3'><i class="bi bi-instagram"></i></li>
       </ul></div>}
   {window.innerWidth>=801&&<div id="fixed-line2"><a className="fixed-email" href = "mailto: kdgdang@ucdavis.edu">kdgdang@ucdavis.edu</a></div>}
-  
+ 
 </main>
+
 <footer>
   <Container className="footer-container">
     <div ><p>Designed and Built by Kiet Dang</p></div>

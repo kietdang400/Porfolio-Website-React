@@ -1,5 +1,5 @@
 .App {
-  background-color: #FFFDD0;
+  background-color: #4B4848;
   font-family: 'Playfair Display';
     --nav-height: 50px;
     padding-top: var(--nav-height);
@@ -8,6 +8,16 @@
 i{
   color:#62a4ab;
 }
+
+p{
+  color:white;
+}
+
+li{
+color: white;
+
+}
+
 
 /*Modal*/
 
@@ -20,7 +30,7 @@ margin-left: -9%;
 
 /*Navbar*/
 Header{
-  background-color:#FFFDD0;
+  background-color:#4B4848;
 }
 
 
@@ -52,6 +62,7 @@ transform: 0.2s;
   background-color: transparent;
 }
 
+
 .container .Navbar-brand{
   color: #62a4ab;
 }
@@ -72,7 +83,7 @@ transform: 0.2s;
 
 .Intro .intro-title{
   font-size:450%;
-  color: rgb(102, 102, 102);
+  color:#62a4ab;;
 }
 
 .Intro .intro-summary{
@@ -153,6 +164,10 @@ margin-top: 40%;
 
 }
 
+.Nav .content{
+  color:white
+}
+
 .tab-container .date{
   margin-bottom: 5%;
 }
@@ -191,6 +206,10 @@ margin-top: 40%;
 
 .project .project-1{
 margin-left: 22%;
+}
+
+.card .card-body{
+  background-color:#62a4ab;
 }
 /*Contact*/
 .Contact{
