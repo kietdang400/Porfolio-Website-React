@@ -189,8 +189,8 @@ console.log(window.innerWidth);
   
   <section id="about" className="About">
     <Container>
-      <h1 className="title">About Me</h1>
-      <div className="line-1"></div>
+      <div className="text-center"><h1 className="title"><u>About Me</u></h1></div>
+      {/*<div className="line-1"></div>*/}
       <Row>
         <Col className="about-content" md={5}>
          <div><p>Hi, my name is Kiet and I like building things on the internet. My interest in web development started in my second year of college when I saw my friend coding a website for his school project.</p></div>
@@ -221,9 +221,9 @@ console.log(window.innerWidth);
   </section>
 
    <section id="experience" className="Experience">
-    <Container >
-      <div><h1 className="title mb-5">Where I worked</h1></div>
-    <div className="line-1"></div>
+    <Container className="experience-containter" >
+      <div className="text-center"><h1 className="title mb-5"><u>Where I worked</u></h1></div>
+    {/*<div className="line-1"></div>*/}
       <Row className="tab-container">
     <Col md={6}>
   <div className="nav flex-column nav-pills content-experience1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -252,8 +252,8 @@ console.log(window.innerWidth);
    <section id="projects" className="Projects">
     <Container>
 
-      <div className="mb-5"><h1 className="title">Something's I have Built</h1></div>
-      <div class="line-1"></div>
+      <div className="mb-5 text-center"><h1 className="title"><u>Something's I have Built</u></h1></div>
+      {/*<div class="line-1"></div>*/}
 
       <Row className="project">
         {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img"src={project1} alt="Photo of Pokedex Project"></img></Col>}

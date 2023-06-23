@@ -193,6 +193,7 @@ Header {
 .Experience .tab-container {
   border-left: 3px solid #62a4ab;
   padding: 5%;
+  padding-right: 10%;
 }
 
 .work {
@@ -329,16 +330,32 @@ footer p {
   /*experience start*/
   .Experience {
     margin-left: 20%;
+    padding-right:5% ;
     overflow: hidden;
   }
 
-      .Experience .content-experience1{
-      padding-left: 15%;
-    }
+.Experience .tab-container{
+  position: relative;
+  left:20%;
+}
+
+.Experience .experience-containter{
+padding-right: 15%;
+width: 100%;
+}
+
+
+
+.experience-containter .text-center{
+  position:relative;
+  left:30%;
+}
+
 
         .Experience .content-experience2{
           padding-left: 10%;
           padding-right: 30%;
+        
         }
 
   .Experience .line-1 {
@@ -485,6 +502,7 @@ footer p {
 
   .tab-container {
     margin-top: -10%;
+    padding-left: 5%;
   }
 
   .Experience .line-1 {
@@ -563,6 +581,11 @@ footer p {
 
 
   /*about start*/
+  .About .text-center{
+position: relative;
+left:-8%;
+  }
+
   .About .line-1 {
     position: relative;
     left: 35%;
@@ -584,11 +607,16 @@ footer p {
   .nav-link {
     width: 110%;
     height: 40px;
+  
   }
 
   .nav {
-    margin-top: 160%;
+    margin-top: 370%;
   }
+
+    .Experience .text-center{
+      left:40%;
+    }
 
 
   /*project-start*/
@@ -696,9 +724,9 @@ footer p {
 
   .navbar-collapse {
     margin-left: 55%;
-
-
   }
+
+
 
   /*about start*/
   .About {
@@ -724,7 +752,7 @@ footer p {
   }
 
   .nav {
-    margin-top: 90%
+    margin-top: 200%
   }
 
   /*project start*/
@@ -804,12 +832,12 @@ footer p {
   /*navbar start*/
 
   #navbar {
-    padding-top: 3.5%;
+    padding-top: 2.5%;
     padding-bottom: 2%;
   }
 
   #navbar .navbar-collapse {
-    margin-left: 66%;
+    margin-left: 60%;
   }
 
   .About {
@@ -839,7 +867,7 @@ footer p {
   }
 
   .nav {
-    margin-top: 50%;
+    margin-top: 130%;
   }
 
   .nav .nav-link {
@@ -880,12 +908,33 @@ footer p {
 }
 
 @media (min-width:1400px) {
+
+  #navbar {
+      padding-top: 4%;
+      padding-bottom: 2%;
+    }
+  
+    #navbar .navbar-collapse {
+      margin-left: 60%;
+    }
   #fixed-line1 .fixed-list{
     left:-60%;
   }
 
     #fixed-line2 .fixed-email{
 left: -80%;
+    }
+
+    .Experience .text-center{
+      left:36%;
+    }
+
+    .nav{
+      margin-top: 100%;
+    }
+
+    #fixed-line2 .fixed-email{
+left:-95%;
     }
 
 }
@@ -897,13 +946,32 @@ left: -80%;
     margin-left: -4%;
   }
 
+  .About .text-center{
+    left: -10%;
+  }
+
     #fixed-line1{
-      top: 800px;
+      top: 785px;
     }
 
     #fixed-line2{
 
-top: 780px;
+top: 770px;
     }
+
+             .Experience .experience-containter{
+              position:relative;
+          left:8%;
+        }
+
+                .Experience .text-center {
+                  left: 22%;
+                }
+
+                .nav{
+                  margin-top: 50%;
+                }
+
+                
 
 }
