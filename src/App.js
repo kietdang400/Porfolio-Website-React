@@ -9,7 +9,7 @@ import project2 from './IMG/Project2.JPG';
 import resume from './IMG/Resume.JPG';
 import profilePic from './IMG/Profile Pic.JPG';
 import { Col, Row, Button, Modal, ModalBody} from 'react-bootstrap';
-import Fade from 'reveal.js';
+
 
 
 
@@ -103,7 +103,7 @@ useEffect(()=>{
           </ul>
           </div>)
      break;
-      case'GBCS Group':
+      case'GBCS':
      setInfoHeader(<div><h3>Frontend Developer Intern <h3 className="work">@GBCS Group</h3></h3></div>);
      setInfoDate(<div>May-Sep 2023</div>);
       setInfoBullet(
@@ -165,6 +165,7 @@ console.log(window.innerWidth);
 </header>
 
 <main>
+  
   <section id="intro" className="Intro">
     <Container className="mt-5">
       <div className="d-flex justify-content-left mb-3"><h5 className="Introduction">Hello, my name is</h5></div>
@@ -184,6 +185,7 @@ console.log(window.innerWidth);
       </div>
     </Container>
   </section>
+
   
   <section id="about" className="About">
     <Container>
@@ -219,21 +221,21 @@ console.log(window.innerWidth);
   </section>
 
    <section id="experience" className="Experience">
-    <Container>
+    <Container >
       <div><h1 className="title mb-5">Where I worked</h1></div>
     <div className="line-1"></div>
       <Row className="tab-container">
     <Col md={6}>
-  <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <div className="nav flex-column nav-pills content-experience1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
   <Button className="nav-link bg-info mb-3" id="v-pills-home-tab" data-toggle="pill" onClick={()=>{setTab("JIP")}} role="tab">J.I.P</Button>
   <Button className="nav-link bg-info mb-3" id="v-pills-profile-tab" data-toggle="pill" onClick={()=>{setTab("HiMyLink")}} role="tab">HiMyLink</Button>
   <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("Stripe")}} role="tab">Stripe</Button>
-  <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("GBCS Group")}} role="tab">GBCS Group</Button>
+  <Button className="nav-link bg-info mb-3" id="v-pills-messages-tab" data-toggle="pill" onClick={()=>{setTab("GBCS")}} role="tab">GBCS</Button>
 </div>
 </Col> 
 
 <Col md={6}>
-<div className="tab-content" id="v-pills-tabContent">
+<div className="tab-content content-experience2" id="v-pills-tabContent">
   <div>{infoHeader}</div>
   <div className="date">{infoDate}</div>
   <div id="info">{infoBullet}</div>
@@ -280,14 +282,14 @@ console.log(window.innerWidth);
 <div className="mt-3"><p>React.js&ensp;&ensp;&ensp;Rick&Morty API&ensp;&ensp;&ensp;CSS&ensp;&ensp;&ensp;React Spring&ensp;&ensp;&ensp;Axios</p></div>
 <div><a href="https://github.com/kietdang400/Rick-Morty"><i class="bi bi-github"></i></a>&ensp;&ensp;<a href="https://github.com/kietdang400/Rick-Morty"><i class="bi bi-box-arrow-up-right"></i></a></div>
 </Col>
-{window.innerWidth>=480&&<Col md={7}><img id="RickAndMorty-img" src={project2} alt="Photo of Rick and Morty Location Project"></img></Col>}
+{window.innerWidth>=480&&<Col md={7}><img id="RickAndMorty-img" className="mb-5" src={project2} alt="Rick and Morty Location Project"></img></Col>}
       </Row>
 
       <Row className="project">
-        {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img"src={project1} alt="Photo of Pokedex Project"></img></Col>}
+        {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img" className="mt-5"src={project1} alt="Pokedex Project"></img></Col>}
         <Col md={5} className="project-1">
           <div><h5>featured project</h5></div>
-          <div className="project-name mb-4"><h2>Intrusive Box</h2></div>
+          <div className="project-name "><h2>Intrusive Box</h2></div>
           <div className="card">
   <div className="card-body">
     <p className="card-text">Developed a responsive Full-Stack social media app called Intrusive Box enabling user sign-up, posting intrusive thoughts, chatting with friends, and editing profiles.</p>
@@ -326,7 +328,7 @@ console.log(window.innerWidth);
 </main>
 
 <footer>
-  <Container className="footer-container">
+  <Container className="footer-container pt-2 pb-2">
     <div ><p>Designed and Built by Kiet Dang</p></div>
     <div><a href="https://github.com/kietdang400/Porfolio-Website-React/tree/main"><i class="bi bi-star"></i><i class="bi bi-git"></i></a></div>
   </Container>
