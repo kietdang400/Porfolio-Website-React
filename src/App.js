@@ -152,7 +152,9 @@ const[contactTop,setContactTop]=useState(0);
 const[projectsTopOne,setProjectsTopOne]=useState(0);
 const[projectsTopTwo,setProjectsTopTwo]=useState(0);
 const[projectsTopThree,setProjectsTopThree]=useState(0);
-const[hoverUp,setHoverUp]=useState(false);
+const[hoverUpOne,setHoverUpOne]=useState(false);
+const[hoverUpTwo,setHoverUpTwo]=useState(false);
+const[hoverUpThree,setHoverUpThree]=useState(false);
 const[hoverLeft,setHoverLeft]=useState(false);
 
 const [scrollPosition, setScrollPosition] = useState(0);
@@ -236,6 +238,8 @@ getPositionContact();
 
 //End of Getting Section Position
 
+
+//animation style
   const fadeAnimationAbout = useSpring({
     opacity: scrollPosition > aboutTop-100 ? 1 : 0,
     from: { opacity: 0 },
@@ -279,14 +283,26 @@ const slideProjectTransitionThree=useSpring({
 });
 
 
-const slideUpIcon=useSpring({
-transform:hoverUp?'translateY(-15%)': 'translateY(0%)',
+const slideUpIconOne=useSpring({
+transform:hoverUpOne?'translateY(-15%)': 'translateY(0%)',
+from: { transform: 'translateY(0%)' },
+config: { tension: 200, friction: 20 }
+});
+
+const slideUpIconTwo=useSpring({
+transform:hoverUpTwo?'translateY(-15%)': 'translateY(0%)',
+from: { transform: 'translateY(0%)' },
+config: { tension: 200, friction: 20 }
+});
+
+const slideUpIconThree=useSpring({
+transform:hoverUpThree?'translateY(-15%)': 'translateY(0%)',
 from: { transform: 'translateY(0%)' },
 config: { tension: 200, friction: 20 }
 });
 
 const slideLeftIcon=useSpring({
-transform:hoverLeft?'translateY(-15%)': 'translateY(0%)',
+transform:hoverLeft?'translateX(-5%)': 'translateX(0%)',
 from: { transform: 'translateY(0%)' },
 config: { tension: 200, friction: 20 }
 });
@@ -507,21 +523,21 @@ config: { tension: 200, friction: 20 }
   {window.innerWidth>=801&&<div id="fixed-line1">
     <ul className="fixed-list">
 
-<animated.div style={slideUpIcon}>
-    <li className='mb-3' onMouseOver={(e)=>{setHoverUp(true);}} onMouseOut={()=>setHoverUp(false)}>
+<animated.div style={slideUpIconOne}>
+    <li className='mb-3' onMouseOver={(e)=>{setHoverUpOne(true);}} onMouseOut={()=>setHoverUpOne(false)}>
      <a href="https://github.com/kietdang400"> <i class="bi bi-github"></i></a>
      </li>
 </animated.div>
 
-<animated.div style={slideUpIcon}>
-      <li className='mb-3'  onMouseOver={(e)=>{setHoverUp(true);}} onMouseOut={()=>setHoverUp(false)}>
+<animated.div style={slideUpIconTwo}>
+      <li className='mb-3'  onMouseOver={(e)=>{setHoverUpTwo(true);}} onMouseOut={()=>setHoverUpTwo(false)}>
         <a href="https://www.linkedin.com/in/kiettdang/"><i class="bi bi-linkedin"></i>
         </a>
       </li>
 </animated.div>
 
-<animated.div style={slideUpIcon}>
-      <li className='mb-3'  onMouseOver={(e)=>{setHoverUp(true);}} onMouseOut={()=>setHoverUp(false)}>
+<animated.div style={slideUpIconThree}>
+      <li className='mb-3'  onMouseOver={(e)=>{setHoverUpThree(true);}} onMouseOut={()=>setHoverUpThree(false)}>
         <i class="bi bi-instagram">
         </i>
         </li>
