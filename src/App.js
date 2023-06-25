@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,7 +9,7 @@ import project2 from './IMG/Project2.JPG';
 import resume from './IMG/Resume.JPG';
 import profilePic from './IMG/Profile Pic.JPG';
 import { Col, Row, Button, Modal, ModalBody} from 'react-bootstrap';
-
+import { useSpring, animated } from 'react-spring';
 
 
 
@@ -19,6 +19,27 @@ import { Col, Row, Button, Modal, ModalBody} from 'react-bootstrap';
 
 
 function App() {
+
+/*section position*/
+
+const sectionAboutRef = useRef(null);
+
+  const handleGetPositionAbout = () => {
+    const divPosition = sectionAboutRef.current.getBoundingClientRect();
+    
+  };
+
+  const sectionExperienceRef = useRef(null);
+
+  const handleGetPositionExperience = () => {
+    const divPosition = sectionExperienceRef.current.getBoundingClientRect();
+  
+  };
+
+  useEffect(()=>{
+handleGetPositionAbout();
+handleGetPositionExperience();
+  },[])
 
   /*NavBar*/ 
   const [show, setShow] = useState(true);
@@ -122,6 +143,155 @@ useEffect(()=>{
 const[Modall,setModal]=useState(false)
 console.log(window.innerWidth);
 
+//animation
+const [flip,setFlip]=useState(false);
+const[aboutTop,setAboutTop]=useState(0);
+const[experienceTop,setExperienceTop]=useState(0);
+const[projectsTop,setProjectsTop]=useState(0);
+const[contactTop,setContactTop]=useState(0);
+const[projectsTopOne,setProjectsTopOne]=useState(0);
+const[projectsTopTwo,setProjectsTopTwo]=useState(0);
+const[projectsTopThree,setProjectsTopThree]=useState(0);
+const[hoverUp,setHoverUp]=useState(false);
+const[hoverLeft,setHoverLeft]=useState(false);
+
+const [scrollPosition, setScrollPosition] = useState(0);
+
+const sectionRefAbout = useRef(null);
+const sectionRefExperience = useRef(null);
+const sectionRefProjects = useRef(null);
+const sectionRefProjectsOne=useRef(null);
+const sectionRefProjectsTwo=useRef(null);
+const sectionRefProjectsThree=useRef(null);
+const sectionRefContact=useRef(null);
+
+const props=useSpring({
+  to:{ opacity:1},
+  from:{opacity:0},
+  reset:true,
+  reverse:flip,
+  delay:700,
+});
+
+//Getting section Position
+const getPositionAbout = () => {
+    const { top } = sectionRefAbout.current.getBoundingClientRect();
+    setAboutTop(top);
+  };
+
+  const getPositionExperience = () => {
+    const { top } = sectionRefExperience.current.getBoundingClientRect();
+    setExperienceTop(top);
+  };
+
+   const getPositionProjects = () => {
+    const { top } = sectionRefExperience.current.getBoundingClientRect();
+    setProjectsTop(top);
+  };
+
+   const getPositionContact = () => {
+    const { top } = sectionRefContact.current.getBoundingClientRect();
+    setContactTop(top);
+  };
+
+
+  const getPositionProjectsOne = () => {
+    const { top } = sectionRefProjectsOne.current.getBoundingClientRect();
+    setProjectsTopOne(top);
+  };
+
+  const getPositionProjectsTwo = () => {
+    const { top } = sectionRefProjectsTwo.current.getBoundingClientRect();
+    setProjectsTopTwo(top);
+  };
+
+  const getPositionProjectsThree = () => {
+    const { top } = sectionRefProjectsThree.current.getBoundingClientRect();
+    setProjectsTopThree(top);
+  };
+
+
+useEffect(() => {
+
+getPositionAbout();
+getPositionExperience();
+getPositionProjects();
+getPositionProjectsOne();
+getPositionProjectsTwo();
+getPositionProjectsThree();
+getPositionContact();
+
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  }, []);
+
+//End of Getting Section Position
+
+  const fadeAnimationAbout = useSpring({
+    opacity: scrollPosition > aboutTop-100 ? 1 : 0,
+    from: { opacity: 0 },
+    config: { tension: 200, friction: 20 }
+  });
+
+  const fadeAnimationExperience = useSpring({
+    opacity: scrollPosition > experienceTop-100 ? 1 : 0,
+    from: { opacity: 0 },
+    config: { tension: 200, friction: 20 }
+  });
+
+  const fadeAnimationProjects = useSpring({
+    opacity: scrollPosition > projectsTop ? 1 : 0,
+    from: { opacity: 0 },
+    config: { tension: 200, friction: 20 }
+  });
+
+  const fadeAnimationContact = useSpring({
+    opacity: scrollPosition+300>contactTop? 1 : 0,
+    from: { opacity: 0 },
+    config: { tension: 200, friction: 20 },
+  });
+
+const slideProjectTransitionOne=useSpring({
+transform:  scrollPosition > projectsTopOne?'translateX(5%)':'translateX(130%)',
+    from: { transform: 'translateX(120%)' },
+    config: { tension: 200, friction: 20 }
+});
+
+const slideProjectTransitionTwo=useSpring({
+  transform:  scrollPosition > projectsTopTwo-100?'translateX(-5%)':'translateX(-130%)',
+    from: { transform: 'translateX(-120%)' },
+    config: { tension: 200, friction: 20 }
+});
+
+const slideProjectTransitionThree=useSpring({
+  transform:  scrollPosition > projectsTopThree-100?'translateX(5%)':'translateX(130%)',
+    from: { transform: 'translateX(120%)' },
+    config: { tension: 200, friction: 20 }
+});
+
+
+const slideUpIcon=useSpring({
+transform:hoverUp?'translateY(-15%)': 'translateY(0%)',
+from: { transform: 'translateY(0%)' },
+config: { tension: 200, friction: 20 }
+});
+
+const slideLeftIcon=useSpring({
+transform:hoverLeft?'translateY(-15%)': 'translateY(0%)',
+from: { transform: 'translateY(0%)' },
+config: { tension: 200, friction: 20 }
+});
+
+
   return (
     <div className="App">
 <header>
@@ -166,8 +336,10 @@ console.log(window.innerWidth);
 
 <main>
   
+  
   <section id="intro" className="Intro">
-    <Container className="mt-5">
+    <animated.div style={props}>
+    <Container className="mt-5" >
       <div className="d-flex justify-content-left mb-3"><h5 className="Introduction">Hello, my name is</h5></div>
       <div className="d-flex justify-content-left mb-3"><h1 className="intro-title">Kiet Dang.</h1></div>
       <div className="d-flex justify-content-left mb-3"><h1 className="intro-title"> I Build Things For Fun.</h1></div>
@@ -184,11 +356,13 @@ console.log(window.innerWidth);
         <Button className="bg-info" onClick={()=>{setModal(true)}}>Resume</Button>
       </div>
     </Container>
+</animated.div>
   </section>
 
   
-  <section id="about" className="About">
-    <Container>
+  <section id="about" className="About" ref={sectionAboutRef}>
+    <animated.div style={fadeAnimationAbout}>
+    <Container ref={sectionRefAbout}>
       <div className="text-center"><h1 className="title"><u>About Me</u></h1></div>
       {/*<div className="line-1"></div>*/}
       <Row>
@@ -198,7 +372,7 @@ console.log(window.innerWidth);
       <div><p> Here are a few technologies that I have been working with:</p></div>
         </Col>
         <Col md={7}>
-          <img id="profile-picture" src={profilePic} alt="profile picture"></img>
+           <img id="profile-picture" src={profilePic} alt="profile picture"></img>
         </Col>
       </Row>
       <Row>
@@ -218,10 +392,12 @@ console.log(window.innerWidth);
         </Col>
       </Row>
     </Container>
+    </animated.div>
   </section>
 
-   <section id="experience" className="Experience">
-    <Container className="experience-containter" >
+   <section id="experience" className="Experience" ref={sectionExperienceRef}>
+    <animated.div style={fadeAnimationExperience}>
+    <Container className="experience-containter" ref={sectionRefExperience} >
       <div className="text-center"><h1 className="title mb-5"><u>Where I worked</u></h1></div>
     {/*<div className="line-1"></div>*/}
       <Row className="tab-container">
@@ -244,18 +420,22 @@ console.log(window.innerWidth);
 </Row>
 
     </Container>
+    </animated.div>
   </section>
 
 
 
 
-   <section id="projects" className="Projects">
+   <section id="projects" className="Projects" ref={sectionRefProjects}>
     <Container>
 
+<animated.div style={fadeAnimationProjects}>
       <div className="mb-5 text-center"><h1 className="title"><u>Something's I have Built</u></h1></div>
       {/*<div class="line-1"></div>*/}
+</animated.div>
 
-      <Row className="project">
+<animated.div style={slideProjectTransitionOne}>
+      <Row className="project" ref={sectionRefProjectsOne} >
         {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img"src={project1} alt="Photo of Pokedex Project"></img></Col>}
         <Col md={5} className="project-1">
           <div><h5>featured project</h5></div>
@@ -269,8 +449,10 @@ console.log(window.innerWidth);
 <div><a href="https://github.com/kietdang400/pokedexReact"><i class="bi bi-github"></i></a>&ensp;&ensp;<a href="https://github.com/kietdang400/pokedexReact"><i class="bi bi-box-arrow-up-right"></i></a></div>
         </Col>
       </Row>
+</animated.div>
 
-        <Row>
+<animated.div style={slideProjectTransitionTwo}>
+        <Row ref={sectionRefProjectsTwo}>
         <Col md={5}>   
         <div><h5>featured project</h5></div>
           <div className="project-name mb-4"><h2>Rick and Morty Location</h2></div>
@@ -284,8 +466,10 @@ console.log(window.innerWidth);
 </Col>
 {window.innerWidth>=480&&<Col md={7}><img id="RickAndMorty-img" className="mb-5" src={project2} alt="Rick and Morty Location Project"></img></Col>}
       </Row>
+</animated.div>
 
-      <Row className="project">
+<animated.div style={slideProjectTransitionThree}>
+      <Row className="project" ref={sectionRefProjectsThree}>
         {window.innerWidth>=480&&<Col md={4}><img id="pokedex-img" className="mt-5"src={project1} alt="Pokedex Project"></img></Col>}
         <Col md={5} className="project-1">
           <div><h5>featured project</h5></div>
@@ -299,6 +483,7 @@ console.log(window.innerWidth);
 <div><a href="https://github.com/kietdang400/Intrusive-Thoughts"><i class="bi bi-github"></i></a>&ensp;&ensp;<a href="https://github.com/kietdang400/Intrusive-Thoughts"><i class="bi bi-box-arrow-up-right"></i></a></div>
         </Col>
       </Row>
+</animated.div>
 
     </Container>
   </section>
@@ -308,30 +493,57 @@ console.log(window.innerWidth);
 
 
 
-  <section id="contact" className="Contact">
-    <Container className="contact">
+  <section id="contact" className="Contact" ref={sectionRefContact}>
+    <animated.div style={fadeAnimationContact}>
+    <Container className="contact" >
     <div><h3 className="title text-center mb-3">What's Next?</h3></div>
 <div className="text-center mb-3"><h1>Get In Touch</h1></div>
 <div className="text-center"><p>I am currently looking for any open opportunities to expand my skills. My inbox is open if you have any questions or just want to talk. I will try to get back to you as soon as possible. </p></div>
   <div className="text-center mb-5"><Button className="bg-info" href='mailto: kdgdang@ucdavis.edu'>Say Hi</Button></div>
   </Container>
+   </animated.div>
   </section>
+
   {window.innerWidth>=801&&<div id="fixed-line1">
     <ul className="fixed-list">
-    <li className='mb-3'>
-     <a href="https://github.com/kietdang400"> <i class="bi bi-github"></i></a></li>
-      <li className='mb-3'><a href="https://www.linkedin.com/in/kiettdang/"><i class="bi bi-linkedin"></i></a>
-      </li><li className='mb-3'><i class="bi bi-instagram"></i></li>
+
+<animated.div style={slideUpIcon}>
+    <li className='mb-3' onMouseOver={(e)=>{setHoverUp(true);}} onMouseOut={()=>setHoverUp(false)}>
+     <a href="https://github.com/kietdang400"> <i class="bi bi-github"></i></a>
+     </li>
+</animated.div>
+
+<animated.div style={slideUpIcon}>
+      <li className='mb-3'  onMouseOver={(e)=>{setHoverUp(true);}} onMouseOut={()=>setHoverUp(false)}>
+        <a href="https://www.linkedin.com/in/kiettdang/"><i class="bi bi-linkedin"></i>
+        </a>
+      </li>
+</animated.div>
+
+<animated.div style={slideUpIcon}>
+      <li className='mb-3'  onMouseOver={(e)=>{setHoverUp(true);}} onMouseOut={()=>setHoverUp(false)}>
+        <i class="bi bi-instagram">
+        </i>
+        </li>
+</animated.div>
       </ul></div>}
-  {window.innerWidth>=801&&<div id="fixed-line2"><a className="fixed-email" href = "mailto: kdgdang@ucdavis.edu">kdgdang@ucdavis.edu</a></div>}
+  {window.innerWidth>=801&&
+  <div id="fixed-line2">
+    <animated.div style={slideLeftIcon}>
+    <a className="fixed-email" href = "mailto: kdgdang@ucdavis.edu" onMouseOver={()=>{setHoverLeft(true);}} onMouseOut={()=>setHoverLeft(false)}>kdgdang@ucdavis.edu</a>
+     </animated.div>
+  </div>
+ }
  
 </main>
 
 <footer>
+
   <Container className="footer-container pt-2 pb-2">
     <div ><p>Designed and Built by Kiet Dang</p></div>
     <div><a href="https://github.com/kietdang400/Porfolio-Website-React/tree/main"><i class="bi bi-star"></i><i class="bi bi-git"></i></a></div>
   </Container>
+  
 </footer>
     </div>
   );

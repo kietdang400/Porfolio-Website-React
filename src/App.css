@@ -217,6 +217,7 @@ Header {
 
 .Projects .project {
   margin-bottom: 15%;
+  margin-top: 10%;
 }
 
 .project-name {
@@ -225,7 +226,10 @@ Header {
 
 .project .project-1 {
   margin-left: 22%;
+  
 }
+
+
 
 .card .card-body {
   background-color: #62a4ab;
@@ -947,7 +951,7 @@ left:-95%;
   }
 
   .About .text-center{
-    left: -10%;
+    left: -11%;
   }
 
     #fixed-line1{
